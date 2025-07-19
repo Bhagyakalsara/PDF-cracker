@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="CSS/Contact us.css">
+  <title>Contact Us.</title>
+</head>
+<body>
+
+  <div class="header-overlay"></div>
+  <div class="contact-container">
+  <div class="left-col">
+    <div class="logo-container">
+    <div class="logo">
+        <a href="Blossom Medical Center home page.html"><img src="image/Logo.PNG" alt="Blossom Medical Center Logo"></a>
+    </div>
+    </div>
+  </div>
+  <div class="right-col">
+    <div class="theme-switch-wrapper">
+    <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+  </label>
+  <div class="description"><b>Dark Mode</b></div>
+</div>
+    
+    <h1><b>Contact us</b></h1><br>
+    <p>Planning to visit Indonesia soon? Get insider tips on where to go, things to do and find best deals for your next adventure.</p>
+    
+<form id="contact-form" method="post" onsubmit="validation(); return false;">
+  <label for="name"><h2>Full name</h2></label><br>
+  <input type="text" id="name" name="name" placeholder="Your Full Name" required><br>
+  <label for="email"><h2>Email Address</h2></label><br>
+  <input type="email" id="email" name="email" placeholder="Your Email Address" required><br>
+  <label for="message"><h2>Message</h2></label><br>
+  <textarea rows="6" placeholder="Your Message" id="message" name="message" required></textarea><br>
+  <button onclick="validation();" type="submit" id="submit" name="submit"><b>Send</b></button>
+</form>
+<div id="error"></div>
+<div id="success-msg"></div>
+
+<script src="js/contact.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript">
+  function validation() {
+
+    var name = document.getElementById("name").value.trim();
+    var email = document.getElementById("email").value.trim();
+    var message = document.getElementById("message").value.trim();
+
+    if (name === "" || email === "" || message === "") {
+      // Show an error message if any of the fields are empty
+      Swal.fire({
+        title: "Error",
+        text: "Please fill in all the required fields.",
+        icon: "error",
+      });
+      return false; // Prevent form submission
+    }
+
+    Swal.fire({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success"
+    });
+  }
+</script>
+
+
+</body>
+</html>
